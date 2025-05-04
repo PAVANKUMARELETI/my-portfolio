@@ -1,14 +1,49 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { TypeAnimation } from 'react-type-animation'
+import { useEffect, useState } from 'react'
 
 const Hero = () => {
+  const { scrollY } = useScroll()
+  const [scrollDirection, setScrollDirection] = useState('down')
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  // Transform scroll position to x position for the name
+  const nameX = useTransform(scrollY, [0, 1000], [0, -1000])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      if (currentScrollY > lastScrollY) {
+        setScrollDirection('down')
+      } else {
+        setScrollDirection('up')
+      }
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
+
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-white to-purple-50">
-      <div className="absolute inset-0">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/profile.jpg"
+          alt="Background"
+          fill
+          className="object-cover opacity-20"
+          priority
+        />
+      </div>
+
+      {/* Animated Blobs */}
+      <div className="absolute inset-0 z-0">
         <div className="relative w-full h-full">
           <div className="absolute top-20 left-[10%] w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
           <div className="absolute top-40 right-[10%] w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
@@ -33,17 +68,25 @@ const Hero = () => {
             />
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
+          {/* Scrolling Name */}
+          <motion.div
+            style={{
+              x: scrollDirection === 'down' ? nameX : useTransform(scrollY, [0, 1000], [0, 1000]),
+            }}
+            className="overflow-hidden"
           >
-            Hi, I'm{' '}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Pavan Eleti
-            </span>
-          </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 whitespace-nowrap"
+            >
+              Hi, I'm{' '}
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Pavan Eleti
+              </span>
+            </motion.h1>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
