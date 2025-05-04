@@ -25,7 +25,7 @@ const Hero = () => {
             className="relative w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 shadow-xl"
           >
             <Image
-              src="/images/pavan.jpg"
+              src="/images/profile.jpg"
               alt="Pavan Eleti"
               fill
               className="object-cover"
