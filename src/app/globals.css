@@ -11,6 +11,21 @@
   --accent: #ec4899;
 }
 
+/* Hide default cursor on interactive elements */
+a, button, [role="button"] {
+  cursor: none;
+}
+
+/* Hide cursor on the entire page */
+html {
+  cursor: none;
+}
+
+/* Show default cursor for text inputs */
+input, textarea {
+  cursor: text !important;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
