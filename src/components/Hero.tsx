@@ -13,16 +13,17 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mb-8"
+            className="mb-8 hover-effect"
           >
             <Image
               src="/profile.jpg"
               alt="Pavan's Profile Picture"
               width={180}
               height={180}
-              className="rounded-full border-4 border-primary shadow-xl object-cover hover:shadow-2xl transition-shadow duration-300"
+              className="rounded-full border-4 border-primary shadow-xl object-cover hover:shadow-2xl transition-all duration-300"
               priority
             />
+            <div className="tooltip">Click to view full profile</div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -67,31 +68,34 @@ const Hero = () => {
               href="https://github.com/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-primary transition-colors"
+              className="text-gray-600 hover:text-primary transition-colors has-tooltip"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
               <FaGithub className="w-6 h-6" />
+              <div className="tooltip">Visit my GitHub</div>
             </motion.a>
             <motion.a
               href="https://linkedin.com/in/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-primary transition-colors"
+              className="text-gray-600 hover:text-primary transition-colors has-tooltip"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
               <FaLinkedin className="w-6 h-6" />
+              <div className="tooltip">Connect on LinkedIn</div>
             </motion.a>
             <motion.a
               href="https://twitter.com/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-primary transition-colors"
+              className="text-gray-600 hover:text-primary transition-colors has-tooltip"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
               <FaTwitter className="w-6 h-6" />
+              <div className="tooltip">Follow on Twitter</div>
             </motion.a>
           </motion.div>
 

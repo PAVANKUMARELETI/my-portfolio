@@ -63,7 +63,7 @@ const Contact = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-6">Connect With Me</h3>
               <div className="flex space-x-6">
                 <motion.a
-                  href="https://linkedin.com/in/yourusername"
+                  href="www.linkedin.com/in/pavan-kumar-eleti-800a48305"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-primary transition-colors"
@@ -73,7 +73,7 @@ const Contact = () => {
                   <FaLinkedin className="w-6 h-6" />
                 </motion.a>
                 <motion.a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/PAVANKUMARELETI"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-primary transition-colors"
