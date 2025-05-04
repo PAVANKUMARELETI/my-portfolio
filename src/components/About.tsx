@@ -33,19 +33,19 @@ const About = () => {
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
               <h3 className="heading-3 mb-4">Who I Am</h3>
               <p className="text-gray-600 leading-relaxed">
-                I am a passionate Full Stack Developer with expertise in modern web technologies.
-                My journey in web development began with a curiosity about creating beautiful and
-                functional user experiences, which led me to explore various aspects of front-end
-                and back-end development.
+                I am a passionate Data Scientist with expertise in machine learning, statistical analysis,
+                and data visualization. With a strong foundation in both technical and business domains,
+                I help organizations make data-driven decisions and build intelligent solutions.
               </p>
             </div>
 
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
               <h3 className="heading-3 mb-4">What I Do</h3>
               <p className="text-gray-600 leading-relaxed">
-                I specialize in building responsive and performant web applications using
-                Next.js, React, and other modern technologies. My focus is on creating
-                clean, maintainable code that delivers exceptional user experiences.
+                I specialize in developing and deploying machine learning models at scale, with a focus on
+                recommendation systems, natural language processing, and predictive analytics. My experience
+                includes working with large datasets, implementing A/B testing frameworks, and optimizing
+                model performance for production environments.
               </p>
             </div>
           </div>
@@ -54,16 +54,16 @@ const About = () => {
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Education</h4>
               <p className="text-gray-600">
-                B.Tech in Computer Science<br />
+                M.Sc. in Data Science<br />
                 Your University<br />
-                2019 - 2023
+                2021 - 2023
               </p>
             </div>
             
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Experience</h4>
               <p className="text-gray-600">
-                Full Stack Developer<br />
+                Data Scientist<br />
                 Various Projects<br />
                 2+ Years
               </p>
@@ -72,18 +72,18 @@ const About = () => {
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Skills</h4>
               <p className="text-gray-600">
-                Next.js • React<br />
-                TypeScript • Node.js<br />
-                Tailwind CSS
+                Python • R • SQL<br />
+                TensorFlow • PyTorch<br />
+                AWS • Spark
               </p>
             </div>
             
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Interests</h4>
               <p className="text-gray-600">
-                Web Development<br />
-                UI/UX Design<br />
-                Open Source
+                ML Research<br />
+                Big Data<br />
+                Cloud Computing
               </p>
             </div>
           </div>

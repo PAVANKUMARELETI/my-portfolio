@@ -22,10 +22,10 @@ const Hero = () => {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="relative w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden hover:scale-105 transition-transform duration-300"
+            className="relative w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 shadow-xl"
           >
             <Image
-              src="/images/profile.jpg"
+              src="/images/pavan.jpg"
               alt="Pavan Eleti"
               fill
               className="object-cover"
@@ -53,11 +53,11 @@ const Hero = () => {
           >
             <TypeAnimation
               sequence={[
-                'Full Stack Developer',
+                'Data Scientist',
                 2000,
-                'UI/UX Designer',
+                'Machine Learning Engineer',
                 2000,
-                'Tech Enthusiast',
+                'M.Sc. Data Science',
                 2000,
               ]}
               wrapper="span"
@@ -72,8 +72,9 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-lg text-gray-600 max-w-2xl mx-auto mb-12"
           >
-            Passionate about creating beautiful, responsive, and user-friendly web applications.
-            Let's build something amazing together!
+            Passionate about leveraging machine learning and statistical analysis to solve complex business problems.
+            Specializing in recommendation systems, predictive modeling, and large-scale data processing.
+            Seeking opportunities to contribute to Amazon's data-driven innovation.
           </motion.p>
 
           <motion.div
