@@ -63,7 +63,8 @@ body::before {
 
   .hover-effect::after {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-[var(--gradient-start)]/10 to-[var(--gradient-end)]/10 opacity-0 transition-opacity duration-300;
+    @apply absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 transition-opacity duration-300;
+    background-color: rgba(124, 58, 237, 0.1);
   }
 
   .hover-effect:hover::after {

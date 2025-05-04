@@ -1,141 +1,114 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaTwitter, FaArrowDown } from 'react-icons/fa'
 import Image from 'next/image'
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { TypeAnimation } from 'react-type-animation'
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="text-center flex flex-col items-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mb-8 hover-effect"
-          >
-            <Image
-              src="/profile.jpg"
-              alt="Pavan's Profile Picture"
-              width={180}
-              height={180}
-              className="rounded-full border-4 border-primary shadow-xl object-cover hover:shadow-2xl transition-all duration-300"
-              priority
-            />
-            <div className="tooltip">Click to view full profile</div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <motion.h1 
-              className="heading-1 text-gray-900 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Hi, I'm <span className="text-primary">Pavan</span>
-            </motion.h1>
-            <motion.h2 
-              className="text-2xl md:text-3xl text-gray-600 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Data Scientist | Machine Learning Engineer | M.Sc. Data Science
-            </motion.h2>
-            <motion.p 
-              className="text-lg text-gray-600 max-w-2xl mx-auto mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              Passionate about leveraging machine learning and statistical analysis to solve complex business problems.
-              Specializing in recommendation systems, predictive modeling, and large-scale data processing.
-              Seeking opportunities to contribute to Amazon's data-driven innovation.
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex justify-center space-x-6 mb-12"
-          >
-            <motion.a
-              href="https://github.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-primary transition-colors has-tooltip"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FaGithub className="w-6 h-6" />
-              <div className="tooltip">Visit my GitHub</div>
-            </motion.a>
-            <motion.a
-              href="https://linkedin.com/in/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-primary transition-colors has-tooltip"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FaLinkedin className="w-6 h-6" />
-              <div className="tooltip">Connect on LinkedIn</div>
-            </motion.a>
-            <motion.a
-              href="https://twitter.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-primary transition-colors has-tooltip"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FaTwitter className="w-6 h-6" />
-              <div className="tooltip">Follow on Twitter</div>
-            </motion.a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="flex flex-col items-center space-y-4"
-          >
-            <motion.a
-              href="#contact"
-              className="inline-flex items-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Connect With Me
-            </motion.a>
-            <motion.a
-              href="#about"
-              className="text-gray-600 hover:text-primary transition-colors"
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              <FaArrowDown className="w-6 h-6" />
-            </motion.a>
-          </motion.div>
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-white to-purple-50">
+      <div className="absolute inset-0">
+        <div className="relative w-full h-full">
+          <div className="absolute top-20 left-[10%] w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+          <div className="absolute top-40 right-[10%] w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-20 left-[20%] w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
         </div>
       </div>
 
-      {/* Background animated elements */}
-      <motion.div
-        className="absolute inset-0 -z-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.15 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-      </motion.div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
+        <div className="text-center">
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden hover:scale-105 transition-transform duration-300"
+          >
+            <Image
+              src="/images/profile.jpg"
+              alt="Pavan Eleti"
+              fill
+              className="object-cover"
+              priority
+            />
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
+          >
+            Hi, I'm{' '}
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Pavan Eleti
+            </span>
+          </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-xl sm:text-2xl md:text-3xl text-gray-600 mb-8"
+          >
+            <TypeAnimation
+              sequence={[
+                'Full Stack Developer',
+                2000,
+                'UI/UX Designer',
+                2000,
+                'Tech Enthusiast',
+                2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="text-lg text-gray-600 max-w-2xl mx-auto mb-12"
+          >
+            Passionate about creating beautiful, responsive, and user-friendly web applications.
+            Let's build something amazing together!
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="flex justify-center space-x-6"
+          >
+            <a
+              href="https://github.com/PAVANKUMARELETI"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-primary transition-colors duration-300"
+            >
+              <FaGithub className="w-8 h-8" />
+            </a>
+            <a
+              href="https://linkedin.com/in/your-linkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-primary transition-colors duration-300"
+            >
+              <FaLinkedin className="w-8 h-8" />
+            </a>
+            <a
+              href="https://twitter.com/your-twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-primary transition-colors duration-300"
+            >
+              <FaTwitter className="w-8 h-8" />
+            </a>
+          </motion.div>
+        </div>
+      </div>
     </section>
   )
 }
