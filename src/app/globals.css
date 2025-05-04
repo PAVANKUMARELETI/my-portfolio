@@ -5,10 +5,12 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --secondary: #8b5cf6;
-  --accent: #ec4899;
+  --primary: #7c3aed;    /* Vibrant purple */
+  --primary-dark: #6d28d9;
+  --secondary: #ec4899;  /* Pink */
+  --accent: #06b6d4;     /* Cyan */
+  --gradient-start: #7c3aed;
+  --gradient-end: #ec4899;
 }
 
 body {
@@ -43,15 +45,15 @@ body::before {
   }
   
   .heading-1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent;
   }
   
   .heading-2 {
-    @apply text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+    @apply text-3xl md:text-4xl font-bold bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent;
   }
   
   .heading-3 {
-    @apply text-2xl md:text-3xl font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+    @apply text-2xl md:text-3xl font-semibold bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent;
   }
 
   /* Hover effects */
@@ -61,7 +63,7 @@ body::before {
 
   .hover-effect::after {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 transition-opacity duration-300;
+    @apply absolute inset-0 bg-gradient-to-r from-[var(--gradient-start)]/10 to-[var(--gradient-end)]/10 opacity-0 transition-opacity duration-300;
   }
 
   .hover-effect:hover::after {
@@ -81,6 +83,24 @@ body::before {
 
   .has-tooltip:hover .tooltip {
     @apply visible translate-y-0 opacity-100;
+  }
+
+  /* Scroll animations */
+  .scroll-reveal {
+    @apply opacity-0 transition-all duration-700;
+  }
+
+  .scroll-reveal.up {
+    transform: translateY(50px);
+  }
+
+  .scroll-reveal.down {
+    transform: translateY(-50px);
+  }
+
+  .scroll-reveal.visible {
+    @apply opacity-100;
+    transform: translateY(0);
   }
 }
 

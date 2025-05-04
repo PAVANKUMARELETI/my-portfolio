@@ -1,10 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useScrollAnimation } from '@/hooks/useScrollAnimation'
 
 const About = () => {
+  const leftRef = useScrollAnimation('up')
+  const rightRef = useScrollAnimation('down')
+
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="section-padding bg-gradient-to-b from-white to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -14,16 +18,11 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="heading-2 text-gray-900 mb-4">About Me</h2>
-          <div className="w-24 h-1 bg-primary mx-auto"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] mx-auto"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
+          <div ref={leftRef}>
             <h3 className="heading-3 text-gray-900 mb-6">Who I Am</h3>
             <p className="text-gray-600 mb-6">
               I am a passionate Data Scientist with expertise in machine learning, statistical analysis,
@@ -39,16 +38,10 @@ const About = () => {
               When I'm not coding or analyzing data, you can find me exploring new technologies,
               contributing to open-source projects, or sharing my knowledge through technical writing.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 gap-6"
-          >
-            <div className="bg-gray-50 p-6 rounded-lg">
+          <div ref={rightRef} className="grid grid-cols-2 gap-6">
+            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Education</h4>
               <p className="text-gray-600">
                 M.S. in Data Science<br />
@@ -56,7 +49,7 @@ const About = () => {
                 2018 - 2020
               </p>
             </div>
-            <div className="bg-gray-50 p-6 rounded-lg">
+            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Experience</h4>
               <p className="text-gray-600">
                 5+ Years in<br />
@@ -64,7 +57,7 @@ const About = () => {
                 Industry Experience
               </p>
             </div>
-            <div className="bg-gray-50 p-6 rounded-lg">
+            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Location</h4>
               <p className="text-gray-600">
                 Based in<br />
@@ -72,7 +65,7 @@ const About = () => {
                 Open to Remote
               </p>
             </div>
-            <div className="bg-gray-50 p-6 rounded-lg">
+            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Interests</h4>
               <p className="text-gray-600">
                 AI/ML Research<br />
@@ -80,7 +73,7 @@ const About = () => {
                 Technical Writing
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
