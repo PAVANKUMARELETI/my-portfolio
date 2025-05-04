@@ -11,8 +11,8 @@ const Hero = () => {
         <div className="text-center flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1, y: [0, -20, 0] }}
-            transition={{ duration: 3, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="mb-8"
           >
             <Image
@@ -20,7 +20,7 @@ const Hero = () => {
               alt="Pavan's Profile Picture"
               width={180}
               height={180}
-              className="rounded-full border-4 border-primary shadow-xl object-cover"
+              className="rounded-full border-4 border-primary shadow-xl object-cover hover:shadow-2xl transition-shadow duration-300"
               priority
             />
           </motion.div>
@@ -125,12 +125,12 @@ const Hero = () => {
       <motion.div
         className="absolute inset-0 -z-10"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.1 }}
+        animate={{ opacity: 0.15 }}
         transition={{ duration: 1 }}
       >
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-secondary rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-dark rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
       </motion.div>
     </section>
   )
