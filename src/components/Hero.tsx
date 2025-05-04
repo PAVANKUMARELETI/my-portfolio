@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { TypeAnimation } from 'react-type-animation'
@@ -10,20 +10,19 @@ const Hero = () => {
   const { scrollY } = useScroll()
   const [scrollPosition, setScrollPosition] = useState(0)
 
-  // Create a spring animation for smoother movement
-  const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 }
-  const springX = useSpring(scrollPosition, springConfig)
+  // Transform scroll position to x position for the name
+  const nameX = useTransform(scrollY, [0, 1000], [0, -1000])
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY
-      // Accumulate scroll position instead of resetting
-      setScrollPosition(prev => prev + (currentScroll - scrollPosition))
+      // Update scroll position with a multiplier for faster movement
+      setScrollPosition(currentScroll * 2)
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [scrollPosition])
+  }, [])
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -65,22 +64,36 @@ const Hero = () => {
           </motion.div>
 
           {/* Continuous Scrolling Name */}
-          <motion.div
-            style={{ x: springX }}
-            className="overflow-hidden"
-          >
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 whitespace-nowrap"
+          <div className="overflow-hidden relative">
+            <motion.div
+              style={{ x: -scrollPosition }}
+              className="whitespace-nowrap"
             >
-              Hi, I'm{' '}
-              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Pavan Eleti
-              </span>
-            </motion.h1>
-          </motion.div>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 inline-block"
+              >
+                Hi, I'm{' '}
+                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  Pavan Eleti
+                </span>
+              </motion.h1>
+              {/* Duplicate the name for continuous scrolling */}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 inline-block ml-8"
+              >
+                Hi, I'm{' '}
+                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  Pavan Eleti
+                </span>
+              </motion.h1>
+            </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
