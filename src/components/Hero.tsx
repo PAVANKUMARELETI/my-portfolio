@@ -4,24 +4,39 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { TypeAnimation } from 'react-type-animation'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 const Hero = () => {
+  const marqueeRef = useRef<HTMLDivElement>(null)
   const { scrollY } = useScroll()
-  const [scrollPosition, setScrollPosition] = useState(0)
-
-  // Transform scroll position to x position for the name
-  const nameX = useTransform(scrollY, [0, 1000], [0, -1000])
+  const [marqueeX, setMarqueeX] = useState(0)
+  const speed = 1.5 // base speed
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScroll = window.scrollY
-      // Update scroll position with a multiplier for faster movement
-      setScrollPosition(currentScroll * 2)
-    }
+    let animationFrame: number
+    let lastScrollY = window.scrollY
+    let lastTimestamp = performance.now()
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    const animate = (timestamp: number) => {
+      const scrollDelta = window.scrollY - lastScrollY
+      lastScrollY = window.scrollY
+      const timeDelta = timestamp - lastTimestamp
+      lastTimestamp = timestamp
+      // Increase speed with scroll, but always move
+      const velocity = speed + Math.abs(scrollDelta) * 0.5
+      setMarqueeX((prev) => {
+        // Move left, loop when out of view
+        const width = marqueeRef.current?.offsetWidth || 0
+        let next = prev - velocity * (timeDelta / 16)
+        if (width && next < -width / 2) {
+          next += width / 2
+        }
+        return next
+      })
+      animationFrame = requestAnimationFrame(animate)
+    }
+    animationFrame = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(animationFrame)
   }, [])
 
   return (
@@ -63,36 +78,16 @@ const Hero = () => {
             />
           </motion.div>
 
-          {/* Continuous Scrolling Name */}
-          <div className="overflow-hidden relative">
-            <motion.div
-              style={{ x: -scrollPosition }}
-              className="whitespace-nowrap"
-            >
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 inline-block"
-              >
-                Hi, I'm{' '}
-                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  Pavan Eleti
-                </span>
-              </motion.h1>
-              {/* Duplicate the name for continuous scrolling */}
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 inline-block ml-8"
-              >
-                Hi, I'm{' '}
-                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  Pavan Eleti
-                </span>
-              </motion.h1>
-            </motion.div>
+          {/* Marquee Name */}
+          <div className="overflow-hidden relative h-20 mb-6" style={{width: '100%'}}>
+            <div ref={marqueeRef} style={{ display: 'flex', whiteSpace: 'nowrap', transform: `translateX(${marqueeX}px)`, transition: 'none' }}>
+              <h1 className="text-6xl md:text-8xl font-bold inline-block mr-16 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Pavan Eleti
+              </h1>
+              <h1 className="text-6xl md:text-8xl font-bold inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Pavan Eleti
+              </h1>
+            </div>
           </div>
 
           <motion.div
