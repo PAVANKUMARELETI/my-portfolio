@@ -5,35 +5,34 @@ import Image from 'next/image'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { TypeAnimation } from 'react-type-animation'
 import { useEffect, useState, useRef } from 'react'
+import { useMotionValue } from 'framer-motion'
 
 const Hero = () => {
   const marqueeRef = useRef<HTMLDivElement>(null)
   const { scrollY } = useScroll()
-  // Marquee base speed
-  const [marqueeBase, setMarqueeBase] = useState(0)
-  // Link to scroll
-  const marqueeX = useTransform(scrollY, [0, 1000], [0, -1000])
+  // Single MotionValue for marquee position
+  const marqueePos = useMotionValue(0)
+  const lastScroll = useRef(0)
 
   useEffect(() => {
     let animationFrame: number
     const animate = () => {
-      setMarqueeBase((prev) => {
-        // Move left, loop when out of view
-        const width = marqueeRef.current?.offsetWidth || 0
-        let next = prev - 1.5
-        if (width && next < -width / 2) {
-          next += width / 2
-        }
-        return next
-      })
+      const width = marqueeRef.current?.offsetWidth || 0
+      // Continuous left movement
+      let next = marqueePos.get() - 1.5
+      // Add scroll-linked movement
+      const scrollDelta = scrollY.get() - lastScroll.current
+      next += scrollDelta * 2 // adjust multiplier for scroll sensitivity
+      lastScroll.current = scrollY.get()
+      if (width && next < -width / 2) {
+        next += width / 2
+      }
+      marqueePos.set(next)
       animationFrame = requestAnimationFrame(animate)
     }
     animationFrame = requestAnimationFrame(animate)
     return () => cancelAnimationFrame(animationFrame)
-  }, [])
-
-  // Combine continuous and scroll-linked movement
-  const combinedX = useTransform([marqueeX, marqueeBase], ([scroll, base]) => scroll + base)
+  }, [marqueePos, scrollY])
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -51,7 +50,7 @@ const Hero = () => {
         <div className="text-center">
           {/* Continuous Marquee Name linked to scroll */}
           <div className="overflow-hidden relative h-20 mb-6 w-full">
-            <motion.div ref={marqueeRef} style={{ display: 'flex', whiteSpace: 'nowrap', x: combinedX, transition: 'none' }}>
+            <motion.div ref={marqueeRef} style={{ display: 'flex', whiteSpace: 'nowrap', x: marqueePos, transition: 'none' }}>
               <h1 className="text-6xl md:text-8xl font-bold inline-block mr-16 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Pavan Eleti -
               </h1>
