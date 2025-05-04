@@ -53,11 +53,11 @@ const Hero = () => {
           >
             <TypeAnimation
               sequence={[
-                'Data Scientist',
+                'Data Science Graduate',
                 2000,
-                'Machine Learning Engineer',
+                'Machine Learning Enthusiast',
                 2000,
-                'M.Sc. Data Science',
+                'Python Developer',
                 2000,
               ]}
               wrapper="span"
@@ -72,9 +72,9 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-lg text-gray-600 max-w-2xl mx-auto mb-12"
           >
-            Passionate about leveraging machine learning and statistical analysis to solve complex business problems.
-            Specializing in recommendation systems, predictive modeling, and large-scale data processing.
-            Seeking opportunities to contribute to Amazon's data-driven innovation.
+            Fresh graduate with strong foundation in machine learning, statistical analysis, and data visualization.
+            Passionate about building scalable data solutions and eager to contribute to Amazon's data-driven innovation.
+            Seeking opportunities to apply my skills in recommendation systems and predictive modeling.
           </motion.p>
 
           <motion.div
@@ -92,7 +92,7 @@ const Hero = () => {
               <FaGithub className="w-8 h-8" />
             </a>
             <a
-              href="https://linkedin.com/in/your-linkedin"
+              href="https://linkedin.com/in/pavan-kumar-eleti-800a48305"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-primary transition-colors duration-300"

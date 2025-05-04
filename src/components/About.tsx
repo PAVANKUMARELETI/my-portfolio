@@ -33,18 +33,18 @@ const About = () => {
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
               <h3 className="heading-3 mb-4">Who I Am</h3>
               <p className="text-gray-600 leading-relaxed">
-                I am a passionate Full Stack Developer with expertise in modern web technologies.
-                With a strong foundation in both frontend and backend development, I create
-                responsive and user-friendly web applications that deliver exceptional user experiences.
+                I am a recent graduate with a strong passion for data science and machine learning.
+                My academic background and hands-on projects have equipped me with the skills to
+                analyze complex data sets and build predictive models that drive business value.
               </p>
             </div>
 
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
               <h3 className="heading-3 mb-4">What I Do</h3>
               <p className="text-gray-600 leading-relaxed">
-                I specialize in building modern web applications using React, Next.js, and Node.js.
-                My experience includes creating responsive designs, implementing RESTful APIs,
-                and optimizing application performance for the best user experience.
+                I specialize in developing machine learning models and data analysis solutions.
+                My experience includes working with large datasets, implementing statistical methods,
+                and creating data visualizations to communicate insights effectively.
               </p>
             </div>
           </div>
@@ -53,36 +53,36 @@ const About = () => {
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Education</h4>
               <p className="text-gray-600">
-                B.Tech in Computer Science<br />
-                Your University<br />
-                2017 - 2021
+                M.Sc. in Data Science<br />
+                IIIT Lucknow<br />
+                2021 - 2023
               </p>
             </div>
             
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Experience</h4>
               <p className="text-gray-600">
-                Full Stack Developer<br />
-                Various Projects<br />
-                2+ Years
+                Data Science Intern<br />
+                ITC Limited<br />
+                6 Months
               </p>
             </div>
             
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Skills</h4>
               <p className="text-gray-600">
-                React • Next.js • Node.js<br />
-                TypeScript • Tailwind CSS<br />
-                MongoDB • PostgreSQL
+                Python • R • SQL<br />
+                TensorFlow • PyTorch<br />
+                AWS • Spark
               </p>
             </div>
             
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Interests</h4>
               <p className="text-gray-600">
-                Web Development<br />
-                UI/UX Design<br />
-                Open Source
+                ML Research<br />
+                Big Data<br />
+                Cloud Computing
               </p>
             </div>
           </div>
