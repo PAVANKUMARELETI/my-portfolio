@@ -4,31 +4,10 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { TypeAnimation } from 'react-type-animation'
-import { useEffect, useState } from 'react'
 
 const Hero = () => {
   const { scrollY } = useScroll()
-  const [scrollDirection, setScrollDirection] = useState('down')
-  const [lastScrollY, setLastScrollY] = useState(0)
-
-  // Transform scroll position to x position for the name
-  const nameX = useTransform(scrollY, [0, 1000], [0, -1000])
-  const reverseNameX = useTransform(scrollY, [0, 1000], [0, 1000])
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY
-      if (currentScrollY > lastScrollY) {
-        setScrollDirection('down')
-      } else {
-        setScrollDirection('up')
-      }
-      setLastScrollY(currentScrollY)
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY])
+  const nameX = useTransform(scrollY, [0, 1000], [0, -500])
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -71,9 +50,7 @@ const Hero = () => {
 
           {/* Scrolling Name */}
           <motion.div
-            style={{
-              x: scrollDirection === 'down' ? nameX : reverseNameX,
-            }}
+            style={{ x: nameX }}
             className="overflow-hidden"
           >
             <motion.h1
