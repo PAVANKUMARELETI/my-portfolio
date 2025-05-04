@@ -33,37 +33,36 @@ const About = () => {
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
               <h3 className="heading-3 mb-4">Who I Am</h3>
               <p className="text-gray-600 leading-relaxed">
-                I am a passionate Data Scientist with expertise in machine learning, statistical analysis,
-                and data visualization. With a strong foundation in both technical and business domains,
-                I help organizations make data-driven decisions and build intelligent solutions.
+                I am a passionate Full Stack Developer with expertise in modern web technologies.
+                With a strong foundation in both frontend and backend development, I create
+                responsive and user-friendly web applications that deliver exceptional user experiences.
               </p>
             </div>
 
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
               <h3 className="heading-3 mb-4">What I Do</h3>
               <p className="text-gray-600 leading-relaxed">
-                I specialize in developing and deploying machine learning models at scale, with a focus on
-                recommendation systems, natural language processing, and predictive analytics. My experience
-                includes working with large datasets, implementing A/B testing frameworks, and optimizing
-                model performance for production environments.
+                I specialize in building modern web applications using React, Next.js, and Node.js.
+                My experience includes creating responsive designs, implementing RESTful APIs,
+                and optimizing application performance for the best user experience.
               </p>
             </div>
           </div>
 
-          <div ref={rightRef} className="grid grid-cols-2 gap-6">
+          <div ref={rightRef} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Education</h4>
               <p className="text-gray-600">
-                M.Sc. in Data Science<br />
+                B.Tech in Computer Science<br />
                 Your University<br />
-                2021 - 2023
+                2017 - 2021
               </p>
             </div>
             
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Experience</h4>
               <p className="text-gray-600">
-                Data Scientist<br />
+                Full Stack Developer<br />
                 Various Projects<br />
                 2+ Years
               </p>
@@ -72,18 +71,18 @@ const About = () => {
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Skills</h4>
               <p className="text-gray-600">
-                Python • R • SQL<br />
-                TensorFlow • PyTorch<br />
-                AWS • Spark
+                React • Next.js • Node.js<br />
+                TypeScript • Tailwind CSS<br />
+                MongoDB • PostgreSQL
               </p>
             </div>
             
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Interests</h4>
               <p className="text-gray-600">
-                ML Research<br />
-                Big Data<br />
-                Cloud Computing
+                Web Development<br />
+                UI/UX Design<br />
+                Open Source
               </p>
             </div>
           </div>

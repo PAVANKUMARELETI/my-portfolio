@@ -9,31 +9,31 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'E-commerce Recommendation System',
-      description: 'Developed a personalized product recommendation system using collaborative filtering and content-based approaches. Achieved 35% improvement in click-through rates and 25% increase in conversion rates.',
-      technologies: ['Python', 'TensorFlow', 'AWS', 'Spark'],
-      github: 'https://github.com/yourusername/recommendation-system',
+      title: 'E-commerce Platform',
+      description: 'Built a full-stack e-commerce platform with React, Node.js, and MongoDB. Implemented features like user authentication, product search, cart management, and payment integration.',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      github: 'https://github.com/yourusername/ecommerce-platform',
       demo: 'https://demo-link.com'
     },
     {
-      title: 'Customer Churn Prediction',
-      description: 'Built a machine learning model to predict customer churn with 92% accuracy. Implemented feature engineering and ensemble methods to improve prediction performance.',
-      technologies: ['Python', 'Scikit-learn', 'Pandas', 'SQL'],
-      github: 'https://github.com/yourusername/churn-prediction',
+      title: 'Task Management App',
+      description: 'Developed a collaborative task management application with real-time updates using WebSocket. Features include task assignment, progress tracking, and team collaboration.',
+      technologies: ['Next.js', 'Socket.io', 'PostgreSQL', 'Tailwind CSS'],
+      github: 'https://github.com/yourusername/task-management',
       demo: 'https://demo-link.com'
     },
     {
-      title: 'Natural Language Processing Pipeline',
-      description: 'Created an NLP pipeline for sentiment analysis and topic modeling of customer reviews. Processed over 1 million reviews with 89% accuracy in sentiment classification.',
-      technologies: ['Python', 'PyTorch', 'NLTK', 'AWS'],
-      github: 'https://github.com/yourusername/nlp-pipeline',
+      title: 'Portfolio Website',
+      description: 'Created a modern portfolio website with smooth animations and responsive design. Implemented dark mode, contact form, and blog section.',
+      technologies: ['Next.js', 'Framer Motion', 'Tailwind CSS', 'TypeScript'],
+      github: 'https://github.com/yourusername/portfolio',
       demo: 'https://demo-link.com'
     },
     {
-      title: 'Time Series Forecasting',
-      description: 'Developed a forecasting model for sales prediction using LSTM networks. Reduced forecasting error by 40% compared to traditional methods.',
-      technologies: ['Python', 'TensorFlow', 'Pandas', 'Matplotlib'],
-      github: 'https://github.com/yourusername/time-series-forecasting',
+      title: 'Weather Dashboard',
+      description: 'Built a weather dashboard that displays current weather and forecasts using OpenWeatherMap API. Features include location search, weather maps, and historical data.',
+      technologies: ['React', 'Chart.js', 'OpenWeatherMap API', 'CSS Modules'],
+      github: 'https://github.com/yourusername/weather-dashboard',
       demo: 'https://demo-link.com'
     }
   ]
