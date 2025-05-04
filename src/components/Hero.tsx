@@ -13,6 +13,7 @@ const Hero = () => {
 
   // Transform scroll position to x position for the name
   const nameX = useTransform(scrollY, [0, 1000], [0, -1000])
+  const reverseNameX = useTransform(scrollY, [0, 1000], [0, 1000])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,7 +26,7 @@ const Hero = () => {
       setLastScrollY(currentScrollY)
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [lastScrollY])
 
@@ -71,7 +72,7 @@ const Hero = () => {
           {/* Scrolling Name */}
           <motion.div
             style={{
-              x: scrollDirection === 'down' ? nameX : useTransform(scrollY, [0, 1000], [0, 1000]),
+              x: scrollDirection === 'down' ? nameX : reverseNameX,
             }}
             className="overflow-hidden"
           >
