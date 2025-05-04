@@ -1,13 +1,29 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import Image from 'next/image'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { TypeAnimation } from 'react-type-animation'
+import { useEffect, useState } from 'react'
 
 const Hero = () => {
   const { scrollY } = useScroll()
-  const nameX = useTransform(scrollY, [0, 1000], [0, -500])
+  const [scrollPosition, setScrollPosition] = useState(0)
+
+  // Create a spring animation for smoother movement
+  const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 }
+  const springX = useSpring(scrollPosition, springConfig)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.scrollY
+      // Accumulate scroll position instead of resetting
+      setScrollPosition(prev => prev + (currentScroll - scrollPosition))
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [scrollPosition])
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -48,9 +64,9 @@ const Hero = () => {
             />
           </motion.div>
 
-          {/* Scrolling Name */}
+          {/* Continuous Scrolling Name */}
           <motion.div
-            style={{ x: nameX }}
+            style={{ x: springX }}
             className="overflow-hidden"
           >
             <motion.h1
