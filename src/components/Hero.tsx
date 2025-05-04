@@ -53,11 +53,11 @@ const Hero = () => {
           >
             <TypeAnimation
               sequence={[
-                'Full Stack Developer',
+                'Data Scientist',
                 2000,
-                'UI/UX Designer',
+                'Machine Learning Engineer',
                 2000,
-                'Tech Enthusiast',
+                'M.Sc. Data Science',
                 2000,
               ]}
               wrapper="span"
@@ -72,8 +72,9 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-lg text-gray-600 max-w-2xl mx-auto mb-12"
           >
-            A passionate developer focused on creating beautiful and functional web applications.
-            I love turning complex problems into simple, beautiful, and intuitive designs.
+            Passionate about leveraging machine learning and statistical analysis to solve complex business problems.
+            Specializing in recommendation systems, predictive modeling, and large-scale data processing.
+            Seeking opportunities to contribute to Amazon's data-driven innovation.
           </motion.p>
 
           <motion.div
