@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Pavan Eleti', url: 'https://pavaneleti.me' }],
   creator: 'Pavan Eleti',
   publisher: 'Pavan Eleti',
+  metadataBase: new URL('https://pavaneleti.me'),
   openGraph: {
     title: 'Pavan Eleti | Data Scientist Portfolio',
     description: 'Explore projects and skills of Pavan Eleti in ML, NLP, and AI.',
@@ -36,7 +37,6 @@ export const metadata: Metadata = {
     images: ['/images/og-preview.jpg'],
     creator: '@yourtwitterhandle',
   },
-  metadataBase: new URL('https://pavaneleti.me'),
 }
 
 export default function RootLayout({
@@ -47,6 +47,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Favicon */}
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+
+        {/* JSON-LD for SEO */}
         <Script id="jsonld-person" type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -61,6 +65,7 @@ export default function RootLayout({
           })}
         </Script>
       </head>
+
       <body className={`${inter.className} bg-white text-gray-900 dark:bg-black dark:text-white transition-colors`}>
         <main className="min-h-screen">
           {children}
