@@ -43,7 +43,6 @@ const Hero = () => {
     }
   }, [marqueePos, scrollY])
 
-  // Toggle dark mode on <html>
   useEffect(() => {
     document.documentElement.classList.toggle('dark', isDark)
   }, [isDark])
@@ -69,116 +68,78 @@ const Hero = () => {
         {isDark ? <BsSun className="text-yellow-400" /> : <BsMoon className="text-gray-700" />}
       </button>
 
-      {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10 flex flex-col items-center justify-center text-center w-full h-full text-black dark:text-white">
-        {/* Typing Animation */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-xl sm:text-2xl md:text-3xl mb-8"
-        >
-          <TypeAnimation
-            sequence={[
-              'Data Science Graduate',
-              2000,
-              'Machine Learning Enthusiast',
-              2000,
-              'Python Developer',
-              2000,
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-          />
-        </motion.div>
+      {/* Main Content */}
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-8 text-black dark:text-white text-center md:text-left py-24">
 
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="text-lg max-w-2xl mx-auto mb-8 text-gray-700 dark:text-gray-300"
-        >
-          Fresh graduate with strong foundation in machine learning, statistical analysis, and data visualization.
-          Passionate about building scalable data solutions and eager to contribute to Amazon's data-driven innovation.
-          Seeking opportunities to apply my skills in recommendation systems and predictive modeling.
-        </motion.p>
+          {/* Left: Text */}
+          <div className="flex-1 md:ml-[-15rem]">
+            <div className="mb-4">
+              <TypeAnimation
+                sequence={[
+                  'Data Science Graduate',
+                  2000,
+                  'Machine Learning Enthusiast',
+                  2000,
+                  'Python Developer',
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+                className="text-xl sm:text-2xl md:text-3xl block"
+              />
+            </div>
+            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-[500px] text-left md:mx-0 mx-auto">
+              Fresh graduate with strong foundation in machine learning, statistical analysis, and data visualization.
+              Passionate about building scalable data solutions and eager to contribute to Amazon's data-driven innovation.
+              Seeking opportunities to apply my skills in recommendation systems and predictive modeling.
+            </p>
+          </div>
 
-        {/* Resume Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-          className="mb-6"
-        >
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-3 bg-primary text-white font-semibold rounded-xl shadow-lg hover:bg-secondary transition-all duration-300"
-          >
-            📄 Download Resume
-          </a>
-        </motion.div>
+          {/* Right: Buttons */}
+          <div className="flex-1 flex flex-col items-center md:items-end gap-4">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 rounded-lg bg-primary text-white hover:bg-secondary transition"
+            >
+              📄 Download Resume
+            </a>
+            <a
+              href="mailto:askpavaneleti@gmail.com"
+              className="flex items-center gap-2 px-5 py-2 rounded-lg bg-white dark:bg-black border border-primary text-primary hover:bg-primary hover:text-white transition"
+            >
+              <MdEmail className="text-xl" />
+              Email Me
+            </a>
+            <a
+              href="https://wa.me/7993306508"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2 rounded-lg bg-white dark:bg-black border border-green-600 text-green-600 hover:bg-green-600 hover:text-white transition"
+            >
+              <FaWhatsapp className="text-xl" />
+              WhatsApp
+            </a>
+          </div>
+        </div>
 
-        {/* Social Icons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="flex justify-center space-x-6 mb-6"
-        >
-          <a href="https://github.com/PAVANKUMARELETI" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
-            <FaGithub className="w-8 h-8" />
-          </a>
-          <a href="https://linkedin.com/in/pavan-kumar-eleti-800a48305" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
-            <FaLinkedin className="w-8 h-8" />
-          </a>
-          <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
-            <FaTwitter className="w-8 h-8" />
-          </a>
-        </motion.div>
-
-        {/* Contact Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.9 }}
-          className="flex justify-center gap-4 mb-10"
-        >
-          <a
-            href="mailto:youremail@example.com"
-            className="flex items-center gap-2 px-5 py-2 rounded-lg bg-white dark:bg-black border border-primary text-primary hover:bg-primary hover:text-white transition"
-          >
-            <MdEmail className="text-xl" />
-            Email Me
-          </a>
-          <a
-            href="https://wa.me/919999999999"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2 rounded-lg bg-white dark:bg-black border border-green-600 text-green-600 hover:bg-green-600 hover:text-white transition"
-          >
-            <FaWhatsapp className="text-xl" />
-            WhatsApp
-          </a>
-        </motion.div>
-
-        {/* Scroll Arrow */}
+        {/* Scroll Down Arrow */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="text-primary text-3xl absolute bottom-24"
+          className="text-primary text-3xl flex justify-center"
         >
           <IoMdArrowDown />
         </motion.div>
       </div>
 
-      {/* Marquee with fade-out edges */}
+      {/* Scrolling Marquee at Bottom */}
       <div
-        className="absolute bottom-0 w-full overflow-hidden h-20 z-20"
+        className="absolute bottom-[5vh] left-4 right-4 overflow-hidden h-20 z-20"
         onMouseEnter={() => cancelAnimationFrame(animationFrameRef.current!)}
         onMouseLeave={() => startAnimation()}
       >

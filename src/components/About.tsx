@@ -29,7 +29,8 @@ const About = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div ref={leftRef} className="space-y-6">
+          {/* Hide left content on mobile */}
+          <div ref={leftRef} className="space-y-6 hidden sm:block">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
               <h3 className="heading-3 mb-4">Who I Am</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -49,6 +50,7 @@ const About = () => {
             </div>
           </div>
 
+          {/* Keep this visible on all screens */}
           <div ref={rightRef} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Education</h4>
@@ -58,7 +60,7 @@ const About = () => {
                 2021 - 2023
               </p>
             </div>
-            
+
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Experience</h4>
               <p className="text-gray-600">
@@ -67,7 +69,7 @@ const About = () => {
                 6 Months
               </p>
             </div>
-            
+
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Skills</h4>
               <p className="text-gray-600">
@@ -76,7 +78,7 @@ const About = () => {
                 AWS • Spark
               </p>
             </div>
-            
+
             <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">Interests</h4>
               <p className="text-gray-600">
@@ -92,4 +94,4 @@ const About = () => {
   )
 }
 
-export default About 
+export default About

@@ -1,12 +1,42 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 export const metadata: Metadata = {
-  title: 'Your Name - Data Scientist',
-  description: 'Portfolio website showcasing my work as a Data Scientist',
+  title: 'Pavan Eleti | Data Scientist Portfolio',
+  description: 'Portfolio website of Pavan Eleti, a Data Science graduate specializing in machine learning, NLP, and time series forecasting.',
+  keywords: ['Pavan Eleti', 'Data Scientist', 'Machine Learning Portfolio', 'Python Developer', 'Hyderabad', 'Amazon'],
+  authors: [{ name: 'Pavan Eleti', url: 'https://pavaneleti.me' }],
+  creator: 'Pavan Eleti',
+  publisher: 'Pavan Eleti',
+  openGraph: {
+    title: 'Pavan Eleti | Data Scientist Portfolio',
+    description: 'Explore projects and skills of Pavan Eleti in ML, NLP, and AI.',
+    url: 'https://pavaneleti.me',
+    siteName: 'Pavan Eleti Portfolio',
+    images: [
+      {
+        url: '/images/og-preview.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Pavan Eleti Portfolio Screenshot',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pavan Eleti | Data Scientist Portfolio',
+    description: 'Showcasing projects and skills of a data-driven ML enthusiast.',
+    images: ['/images/og-preview.jpg'],
+    creator: '@yourtwitterhandle',
+  },
+  metadataBase: new URL('https://pavaneleti.me'),
 }
 
 export default function RootLayout({
@@ -16,11 +46,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <main className="min-h-screen bg-white">
+      <head>
+        <Script id="jsonld-person" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Pavan Eleti",
+            jobTitle: "Data Scientist",
+            url: "https://pavaneleti.me",
+            sameAs: [
+              "https://github.com/PAVANKUMARELETI",
+              "https://linkedin.com/in/pavan-kumar-eleti-800a48305"
+            ]
+          })}
+        </Script>
+      </head>
+      <body className={`${inter.className} bg-white text-gray-900 dark:bg-black dark:text-white transition-colors`}>
+        <main className="min-h-screen">
           {children}
+          <ToastContainer position="bottom-right" autoClose={3000} theme="light" />
         </main>
       </body>
     </html>
   )
-} 
+}
