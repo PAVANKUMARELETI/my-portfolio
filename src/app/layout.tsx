@@ -48,8 +48,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Favicon */}
-        <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+        {/* Favicon links */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" href="/images/favicon.ico" />
+        <link rel="apple-touch-icon" href="/images/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
 
         {/* JSON-LD for SEO */}
         <Script id="jsonld-person" type="application/ld+json">
@@ -69,13 +72,7 @@ export default function RootLayout({
 
       <body className={`${inter.className} bg-white text-gray-900 dark:bg-black dark:text-white transition-colors`}>
         <main className="min-h-screen pt-5">
-          {/* Hiring Snapshot Banner 
-          <div className="w-full bg-primary/10 text-primary font-semibold py-3 text-center text-sm md:text-base border-b border-primary/20">
-            🚀 Open to Data Scientist Roles @ Amazon · Specializing in ML, NLP, Forecasting · Available Immediately
-          </div>
-          */}
           {children}
-
           <ToastContainer position="bottom-right" autoClose={3000} theme="light" />
           <Analytics />
         </main>
