@@ -5,6 +5,14 @@ const nextConfig = {
   images: {
     domains: ['pavankumareleti.github.io'],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/robots.txt',
+        destination: '/robots', // route defined in app/robots/route.ts
+      },
+    ]
+  },
 }
 
-module.exports = nextConfig 
+module.exports = nextConfig
