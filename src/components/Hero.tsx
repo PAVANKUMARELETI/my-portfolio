@@ -56,10 +56,10 @@ const Hero = () => {
 
       {/* Main Content */}
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-8 text-black dark:text-white text-center md:text-left pt-12 md:pt-24">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-4 md:px-8 text-black dark:text-white text-center md:text-left pt-4 md:pt-24">
 
           {/* Typing animation on top in mobile */}
-          <div className="flex-1 md:ml-[-15rem] mb-6 md:mb-0">
+          <div className="flex-1 mb-8 md:mb-0 md:ml-[-15rem]">
             <TypeAnimation
               sequence={[
                 'Data Science Graduate',
@@ -72,7 +72,7 @@ const Hero = () => {
               wrapper="span"
               speed={50}
               repeat={Infinity}
-              className="text-xl sm:text-2xl md:text-3xl block"
+              className="text-2xl sm:text-3xl md:text-4xl font-semibold"
             />
           </div>
 
@@ -134,7 +134,7 @@ const Hero = () => {
           {Array.from({ length: 10 }).map((_, idx) => (
             <h1
               key={idx}
-              className={`text-6xl sm:text-7xl md:text-8xl font-bold mr-24 text-white ${oswald.className}`}
+              className={`text-7xl sm:text-7xl md:text-8xl font-bold mr-24 text-white ${oswald.className}`}
             >
               Pavan Eleti
             </h1>
