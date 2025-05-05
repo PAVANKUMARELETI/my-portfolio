@@ -116,7 +116,7 @@ const Hero = () => {
 
       {/* Scrolling Marquee Positioned Slightly Below Center in Mobile */}
       <div
-        className="absolute bottom-[30%] md:bottom-0 w-full overflow-hidden h-24 z-20"
+        className="absolute bottom-[30%] md:bottom-[20%] w-full overflow-hidden h-24 z-20"
         onMouseEnter={() => cancelAnimationFrame(animationFrameRef.current!)}
         onMouseLeave={() => startAnimation()}
       >
