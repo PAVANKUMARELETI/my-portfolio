@@ -17,6 +17,7 @@ export default function Home() {
       <About />
       <Experience />
       <Projects />
+      <WhyAmazon />
       <Skills />
       <Contact />
       <Footer />
