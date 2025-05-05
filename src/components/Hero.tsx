@@ -2,13 +2,9 @@
 
 import { motion, useScroll, useMotionValue } from 'framer-motion'
 import Image from 'next/image'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { TypeAnimation } from 'react-type-animation'
 import { useEffect, useRef, useState } from 'react'
 import { IoMdArrowDown } from 'react-icons/io'
-import { MdEmail } from 'react-icons/md'
-import { FaWhatsapp } from 'react-icons/fa'
-import { BsSun, BsMoon } from 'react-icons/bs'
 
 const Hero = () => {
   const marqueeRef = useRef<HTMLDivElement>(null)
@@ -16,7 +12,6 @@ const Hero = () => {
   const { scrollY } = useScroll()
   const marqueePos = useMotionValue(0)
   const lastScroll = useRef(0)
-  const [isDark, setIsDark] = useState(false)
 
   const startAnimation = () => {
     const animate = () => {
@@ -43,10 +38,6 @@ const Hero = () => {
     }
   }, [marqueePos, scrollY])
 
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', isDark)
-  }, [isDark])
-
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white dark:bg-black transition-colors duration-500">
       {/* Background Image */}
@@ -59,8 +50,6 @@ const Hero = () => {
           priority
         />
       </div>
-
-
 
       {/* Main Content */}
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
@@ -84,17 +73,10 @@ const Hero = () => {
                 className="text-xl sm:text-2xl md:text-3xl block"
               />
             </div>
-            {/*}
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-[500px] text-left md:mx-0 mx-auto">
-              Fresh graduate with strong foundation in machine learning, statistical analysis, and data visualization.
-              Passionate about building scalable data solutions and eager to contribute to Amazon's data-driven innovation.
-              Seeking opportunities to apply my skills in recommendation systems and predictive modeling.
-            </p>
-            */}
           </div>
 
-          {/* Right: Buttons */}
-          <div className="flex-1 flex flex-col items-center md:items-end gap-4">
+          {/* Right: Buttons (hidden on mobile) */}
+          <div className="flex-1 flex-col items-center md:items-end gap-4 hidden md:flex">
             <a
               href="/resume.pdf"
               target="_blank"
@@ -107,7 +89,6 @@ const Hero = () => {
               href="mailto:askpavaneleti@gmail.com"
               className="flex items-center gap-2 px-5 py-2 rounded-lg bg-white dark:bg-black border border-primary text-primary hover:bg-primary hover:text-white transition"
             >
-              <MdEmail className="text-xl" />
               Email Me
             </a>
             <a
@@ -116,7 +97,6 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 py-2 rounded-lg bg-white dark:bg-black border border-green-600 text-green-600 hover:bg-green-600 hover:text-white transition"
             >
-              <FaWhatsapp className="text-xl" />
               WhatsApp
             </a>
           </div>
@@ -133,7 +113,6 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Scrolling Marquee at Bottom */}
       {/* Scrolling Marquee at Top for Mobile */}
       <div
         className="absolute top-16 md:bottom-0 w-full overflow-hidden h-24 z-20"
@@ -154,14 +133,13 @@ const Hero = () => {
           {Array.from({ length: 10 }).map((_, idx) => (
             <h1
               key={idx}
-              className="text-5xl sm:text-6xl md:text-8xl font-bold mr-24 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+              className="text-6xl sm:text-7xl md:text-8xl font-bold mr-24 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
             >
               Pavan Eleti
             </h1>
           ))}
         </motion.div>
       </div>
-
     </section>
   )
 }
