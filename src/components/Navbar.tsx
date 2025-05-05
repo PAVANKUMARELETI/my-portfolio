@@ -11,6 +11,7 @@ const navItems = [
   { name: 'Projects', href: '#projects' },
   { name: 'Skills', href: '#skills' },
   { name: 'Contact', href: '#contact' },
+  { name: 'Blog', href: '/blog' },
 ]
 
 const Navbar = () => {
@@ -41,7 +42,10 @@ const Navbar = () => {
       // Active section logic
       const scrollY = window.scrollY + 100
       for (let i = navItems.length - 1; i >= 0; i--) {
-        const section = document.querySelector(navItems[i].href)
+        const href = navItems[i].href
+        if (!href.startsWith('#')) continue // skip external routes like /blog
+        const section = document.querySelector(href)
+
         if (section) {
           const offsetTop = section.getBoundingClientRect().top + window.scrollY
           if (scrollY >= offsetTop) {

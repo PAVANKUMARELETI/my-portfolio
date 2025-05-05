@@ -60,13 +60,7 @@ const Hero = () => {
         />
       </div>
 
-      {/* Dark mode toggle */}
-      <button
-        onClick={() => setIsDark(prev => !prev)}
-        className="absolute top-6 right-6 z-30 text-xl p-2 rounded-full bg-white/70 dark:bg-black/70 backdrop-blur hover:scale-110 transition"
-      >
-        {isDark ? <BsSun className="text-yellow-400" /> : <BsMoon className="text-gray-700" />}
-      </button>
+
 
       {/* Main Content */}
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
