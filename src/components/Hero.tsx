@@ -52,13 +52,13 @@ const Hero = () => {
           <div className="overflow-hidden relative h-20 mb-6 w-full">
             <motion.div ref={marqueeRef} style={{ display: 'flex', whiteSpace: 'nowrap', x: marqueePos, transition: 'none' }}>
               <h1 className="text-6xl md:text-8xl font-bold inline-block mr-16 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Pavan Eleti -
+                Pavan Eleti
               </h1>
               <h1 className="text-6xl md:text-8xl font-bold inline-block mr-16 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Pavan Eleti -
+                Pavan Eleti
               </h1>
               <h1 className="text-6xl md:text-8xl font-bold inline-block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Pavan Eleti -
+                Pavan Eleti
               </h1>
             </motion.div>
           </div>
