@@ -10,8 +10,16 @@ const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 export const metadata: Metadata = {
   title: 'Pavan Eleti | Data Scientist Portfolio',
-  description: 'Portfolio website of Pavan Eleti, a Data Science graduate specializing in machine learning, NLP, and time series forecasting.',
-  keywords: ['Pavan Eleti', 'Data Scientist', 'Machine Learning Portfolio', 'Python Developer', 'Hyderabad', 'Amazon'],
+  description:
+    'Portfolio website of Pavan Eleti, a Data Science graduate specializing in machine learning, NLP, and time series forecasting.',
+  keywords: [
+    'Pavan Eleti',
+    'Data Scientist',
+    'Machine Learning Portfolio',
+    'Python Developer',
+    'Hyderabad',
+    'Amazon',
+  ],
   authors: [{ name: 'Pavan Eleti', url: 'https://pavaneleti.me' }],
   creator: 'Pavan Eleti',
   publisher: 'Pavan Eleti',
@@ -66,11 +74,13 @@ export default function RootLayout({
           })}
         </Script>
       </head>
-
-      <body className={`${inter.className} bg-white text-gray-900 dark:bg-black dark:text-white transition-colors`}>
+      <body
+        className={`${inter.className} bg-white text-gray-900 dark:bg-black dark:text-white transition-colors`}
+      >
         <main className="min-h-screen">
           {children}
           <ToastContainer position="bottom-right" autoClose={3000} theme="light" />
+          <Analytics />
         </main>
       </body>
     </html>
