@@ -113,9 +113,9 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Scrolling Marquee at Top for Mobile */}
+      {/* Scrolling Marquee Positioned Slightly Below Center in Mobile */}
       <div
-        className="absolute top-16 md:bottom-0 w-full overflow-hidden h-24 z-20"
+        className="absolute bottom-[30%] md:bottom-0 w-full overflow-hidden h-24 z-20"
         onMouseEnter={() => cancelAnimationFrame(animationFrameRef.current!)}
         onMouseLeave={() => startAnimation()}
       >
@@ -133,13 +133,14 @@ const Hero = () => {
           {Array.from({ length: 10 }).map((_, idx) => (
             <h1
               key={idx}
-              className="text-6xl sm:text-7xl md:text-8xl font-bold mr-24 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+              className="text-6xl sm:text-7xl md:text-8xl font-bold mr-24 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-poppins"
             >
               Pavan Eleti
             </h1>
           ))}
         </motion.div>
       </div>
+
     </section>
   )
 }
