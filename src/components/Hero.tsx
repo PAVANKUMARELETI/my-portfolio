@@ -133,13 +133,14 @@ const Hero = () => {
           {Array.from({ length: 10 }).map((_, idx) => (
             <h1
               key={idx}
-              className="text-6xl sm:text-7xl md:text-8xl font-bold mr-24 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-poppins"
+              className="text-6xl sm:text-7xl md:text-8xl font-bold mr-24 text-white font-poppins"
             >
               Pavan Eleti
             </h1>
           ))}
         </motion.div>
       </div>
+
 
     </section>
   )
