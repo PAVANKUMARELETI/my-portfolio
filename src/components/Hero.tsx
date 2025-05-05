@@ -3,12 +3,11 @@
 import { motion, useScroll, useMotionValue } from 'framer-motion'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { IoMdArrowDown } from 'react-icons/io'
 import { Oswald } from 'next/font/google'
 
 const oswald = Oswald({ subsets: ['latin'], weight: ['400', '700'] })
-
 
 const Hero = () => {
   const marqueeRef = useRef<HTMLDivElement>(null)
@@ -57,26 +56,24 @@ const Hero = () => {
 
       {/* Main Content */}
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-8 text-black dark:text-white text-center md:text-left py-24">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-8 text-black dark:text-white text-center md:text-left pt-12 md:pt-24">
 
-          {/* Left: Text */}
-          <div className="flex-1 md:ml-[-15rem]">
-            <div className="mb-4">
-              <TypeAnimation
-                sequence={[
-                  'Data Science Graduate',
-                  2000,
-                  'Machine Learning Enthusiast',
-                  2000,
-                  'Python Developer',
-                  2000,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-                className="text-xl sm:text-2xl md:text-3xl block"
-              />
-            </div>
+          {/* Typing animation on top in mobile */}
+          <div className="flex-1 md:ml-[-15rem] mb-6 md:mb-0">
+            <TypeAnimation
+              sequence={[
+                'Data Science Graduate',
+                2000,
+                'Machine Learning Enthusiast',
+                2000,
+                'Python Developer',
+                2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+              className="text-xl sm:text-2xl md:text-3xl block"
+            />
           </div>
 
           {/* Right: Buttons (hidden on mobile) */}
@@ -141,12 +138,9 @@ const Hero = () => {
             >
               Pavan Eleti
             </h1>
-          
           ))}
         </motion.div>
       </div>
-
-
     </section>
   )
 }
