@@ -59,7 +59,7 @@ const Hero = () => {
         <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-4 md:px-8 text-black dark:text-white text-center md:text-left pt-4 md:pt-24">
 
           {/* Typing animation on top in mobile */}
-          <div className="flex-1 mb-8 md:mb-0 md:ml-[-15rem]">
+          <div className="flex-1 pt-2 mb-4 md:mb-0 md:ml-[-15rem]">
             <TypeAnimation
               sequence={[
                 'Data Science Graduate',
