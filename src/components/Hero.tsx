@@ -84,11 +84,13 @@ const Hero = () => {
                 className="text-xl sm:text-2xl md:text-3xl block"
               />
             </div>
+            {/*}
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-[500px] text-left md:mx-0 mx-auto">
               Fresh graduate with strong foundation in machine learning, statistical analysis, and data visualization.
               Passionate about building scalable data solutions and eager to contribute to Amazon's data-driven innovation.
               Seeking opportunities to apply my skills in recommendation systems and predictive modeling.
             </p>
+            */}
           </div>
 
           {/* Right: Buttons */}

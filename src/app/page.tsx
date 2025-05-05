@@ -8,6 +8,7 @@ import Navbar from '@/components/Navbar'
 import WhyAmazon from '@/components/WhyAmazon'
 import Footer from '@/components/Footer'
 import FloatingCTA from '@/components/FloatingCTA'
+import Testimonials from '@/components/Testimonials'
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Projects />
       <WhyAmazon />
       <Skills />
+      <Testimonials />
       <Contact />
       <Footer />
       <FloatingCTA />
