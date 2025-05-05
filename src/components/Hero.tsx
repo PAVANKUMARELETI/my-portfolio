@@ -5,6 +5,10 @@ import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
 import { useEffect, useRef, useState } from 'react'
 import { IoMdArrowDown } from 'react-icons/io'
+import { Oswald } from 'next/font/google'
+
+const oswald = Oswald({ subsets: ['latin'], weight: ['400', '700'] })
+
 
 const Hero = () => {
   const marqueeRef = useRef<HTMLDivElement>(null)
@@ -133,10 +137,11 @@ const Hero = () => {
           {Array.from({ length: 10 }).map((_, idx) => (
             <h1
               key={idx}
-              className="text-6xl sm:text-7xl md:text-8xl font-bold mr-24 text-white font-poppins"
+              className={`text-6xl sm:text-7xl md:text-8xl font-bold mr-24 text-white ${oswald.className}`}
             >
               Pavan Eleti
             </h1>
+          
           ))}
         </motion.div>
       </div>
