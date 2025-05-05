@@ -12,7 +12,7 @@ import { BsSun, BsMoon } from 'react-icons/bs'
 
 const Hero = () => {
   const marqueeRef = useRef<HTMLDivElement>(null)
-  const animationFrameRef = useRef<number>()
+  const animationFrameRef = useRef<number | undefined>()
   const { scrollY } = useScroll()
   const marqueePos = useMotionValue(0)
   const lastScroll = useRef(0)
@@ -36,7 +36,11 @@ const Hero = () => {
 
   useEffect(() => {
     startAnimation()
-    return () => cancelAnimationFrame(animationFrameRef.current)
+    return () => {
+      if (animationFrameRef.current !== undefined) {
+        cancelAnimationFrame(animationFrameRef.current)
+      }
+    }
   }, [marqueePos, scrollY])
 
   // Toggle dark mode on <html>
@@ -175,7 +179,7 @@ const Hero = () => {
       {/* Marquee with fade-out edges */}
       <div
         className="absolute bottom-0 w-full overflow-hidden h-20 z-20"
-        onMouseEnter={() => cancelAnimationFrame(animationFrameRef.current)}
+        onMouseEnter={() => cancelAnimationFrame(animationFrameRef.current!)}
         onMouseLeave={() => startAnimation()}
       >
         <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white dark:from-black to-transparent z-30" />
