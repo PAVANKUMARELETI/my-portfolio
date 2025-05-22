@@ -7,6 +7,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
 import { Progress } from "@/components/ui/progress";
+import CaseStudies from "@/components/CaseStudies";
+
 
 export default function TrackerPage() {
   useEffect(() => {
@@ -59,6 +61,7 @@ export default function TrackerPage() {
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <WeeklyProgress />
+            <CaseStudies />
           </motion.section>
 
           <section className="space-y-4" data-aos="fade-up">
