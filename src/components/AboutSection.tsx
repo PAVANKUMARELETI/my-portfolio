@@ -57,7 +57,7 @@ const About = () => {
               <p className="text-gray-600">
                 M.Sc. in Data Science<br />
                 IIIT Lucknow<br />
-                2021 - 2023
+                2024 - 2026
               </p>
             </div>
 
@@ -66,7 +66,7 @@ const About = () => {
               <p className="text-gray-600">
                 Data Science Intern<br />
                 ITC Limited<br />
-                6 Months
+                9 Months
               </p>
             </div>
 

@@ -11,8 +11,9 @@
   "dependencies": {
     "@heroicons/react": "^2.1.1",
     "@vercel/analytics": "^1.5.0",
+    "aos": "^2.3.4",
     "autoprefixer": "^10.4.17",
-    "framer-motion": "^11.0.3",
+    "framer-motion": "^11.18.2",
     "next": "14.1.0",
     "postcss": "^8.4.35",
     "react": "^18.2.0",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.10",
+    "@types/aos": "^3.0.7",
     "@types/node": "^20.11.16",
     "@types/react": "^18.2.52",
     "@types/react-dom": "^18.2.18",

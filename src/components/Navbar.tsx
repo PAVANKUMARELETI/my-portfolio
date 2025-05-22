@@ -12,6 +12,7 @@ const navItems = [
   { name: 'Skills', href: '#skills' },
   { name: 'Contact', href: '#contact' },
   { name: 'Blog', href: '/blog' },
+  { name: 'Tracker', href: '/tracker' },
 ]
 
 const Navbar = () => {
@@ -43,7 +44,7 @@ const Navbar = () => {
       const scrollY = window.scrollY + 100
       for (let i = navItems.length - 1; i >= 0; i--) {
         const href = navItems[i].href
-        if (!href.startsWith('#')) continue // skip external routes like /blog
+        if (!href.startsWith('#')) continue // skip external routes like /blog or /tracker
         const section = document.querySelector(href)
 
         if (section) {

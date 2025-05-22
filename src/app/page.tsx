@@ -1,5 +1,5 @@
 import Hero from '@/components/Hero'
-import About from '@/components/About'
+import AboutSection from '@/components/AboutSection'
 import Experience from '@/components/Experience'
 import Projects from '@/components/Projects'
 import Skills from '@/components/Skills'
@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <About />
+      <AboutSection />
       <Experience />
       <Projects />
       <WhyAmazon />
