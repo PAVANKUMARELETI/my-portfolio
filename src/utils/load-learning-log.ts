@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-
 export interface LearningLog {
   title: string;
   date: string;
@@ -12,7 +11,8 @@ export interface LearningLog {
 export const getLearningLog = (): LearningLog => {
   const filePath = path.join(process.cwd(), 'src', 'content', 'learning-log.md');
   const fileContent = fs.readFileSync(filePath, 'utf-8');
-  const { data, content } = matter(fileContent);
+  const result: any = matter(fileContent);
+  const { data, content } = result;
 
   return {
     title: data.title || '',
