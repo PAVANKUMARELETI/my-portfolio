@@ -22,7 +22,7 @@ const experienceData: Experience[] = [
   {
     title: 'Data Science Intern',
     company: 'ITC Limited',
-    location: 'Remote',
+    location: 'Hybrid',
     duration: 'September 2024 - Present',
     type: 'work',
     description: 'Leading comprehensive agricultural analytics projects focusing on commodity price prediction using advanced machine learning techniques.',
