@@ -1,42 +1,64 @@
 'use client'
 
-import { motion, useAnimation, useInView } from 'framer-motion'
-import { useEffect, useRef } from 'react'
+import { motion, useAnimation, Variants } from 'framer-motion'
+import { useInView } from 'framer-motion'
+import { useEffect, useRef, ReactNode } from 'react'
 
-type Props = {
-  children: React.ReactNode
-  direction?: 'up' | 'down' | 'left' | 'right'
+interface FadeInWhenVisibleProps {
+  children: ReactNode
   delay?: number
+  duration?: number
+  direction?: 'up' | 'down' | 'left' | 'right'
+  className?: string
 }
 
-const FadeInWhenVisible = ({ children, direction = 'up', delay = 0 }: Props) => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-50px' })
+const FadeInWhenVisible = ({ 
+  children, 
+  delay = 0, 
+  duration = 0.6, 
+  direction = 'up',
+  className = ''
+}: FadeInWhenVisibleProps) => {
   const controls = useAnimation()
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: "-100px" })
 
-  useEffect(() => {
-    if (isInView) {
-      controls.start('visible')
+  const getDirectionOffset = () => {
+    switch (direction) {
+      case 'up': return { y: 50, x: 0 }
+      case 'down': return { y: -50, x: 0 }
+      case 'left': return { y: 0, x: 50 }
+      case 'right': return { y: 0, x: -50 }
+      default: return { y: 50, x: 0 }
     }
-  }, [isInView, controls])
+  }
 
-  const variants = {
+  const offset = getDirectionOffset()
+
+  // Fix: Use proper Framer Motion easing values
+  const variants: Variants = {
     hidden: {
       opacity: 0,
-      y: direction === 'up' ? 30 : direction === 'down' ? -30 : 0,
-      x: direction === 'left' ? 30 : direction === 'right' ? -30 : 0,
+      y: offset.y,
+      x: offset.x,
     },
     visible: {
       opacity: 1,
       y: 0,
       x: 0,
       transition: {
-        duration: 0.6,
-        delay,
-        ease: 'easeOut',
+        duration: duration,
+        delay: delay,
+        ease: [0.25, 0.46, 0.45, 0.94], // Use bezier curve instead of string
       },
     },
   }
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible')
+    }
+  }, [controls, inView])
 
   return (
     <motion.div
@@ -44,6 +66,7 @@ const FadeInWhenVisible = ({ children, direction = 'up', delay = 0 }: Props) => 
       initial="hidden"
       animate={controls}
       variants={variants}
+      className={className}
     >
       {children}
     </motion.div>
