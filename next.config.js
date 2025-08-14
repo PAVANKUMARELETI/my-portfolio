@@ -1,8 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Remove swcMinify - it's enabled by default in Next.js 13+
+  reactStrictMode: true,
   images: {
-    domains: ['via.placeholder.com'],
+    domains: ['via.placeholder.com', 'pavankumareleti.github.io'],
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/robots.txt',
+        destination: '/robots', // route defined in app/robots/route.ts
+      },
+    ]
   },
 }
 

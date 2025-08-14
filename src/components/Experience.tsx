@@ -22,8 +22,8 @@ const experienceData: Experience[] = [
   {
     title: 'Data Science Intern',
     company: 'ITC Limited',
-    location: 'Hybrid',
-    duration: 'September 2025 - Present',
+    location: 'Remote',
+    duration: 'September 2024 - Present',
     type: 'work',
     description: 'Leading comprehensive agricultural analytics projects focusing on commodity price prediction using advanced machine learning techniques.',
     responsibilities: [
@@ -47,8 +47,7 @@ const experienceData: Experience[] = [
     color: 'from-green-500 to-emerald-500',
     icon: FaBriefcase
   },
-
-    {
+  {
     title: 'Teaching Assistant',
     company: 'IIIT Lucknow Research Lab',
     location: 'Lucknow, India',
@@ -75,7 +74,6 @@ const experienceData: Experience[] = [
     color: 'from-orange-500 to-red-500',
     icon: FaChartLine
   },
-  
   {
     title: 'M.Sc. in Data Science',
     company: 'IIIT Lucknow',
@@ -120,8 +118,7 @@ const experienceData: Experience[] = [
     ],
     color: 'from-purple-500 to-pink-500',
     icon: FaRocket
-  },
-
+  }
 ]
 
 const Experience = () => {

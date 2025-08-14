@@ -1,109 +1,127 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import FadeInWhenVisible from './FadeInWhenVisible'
+import { FaCode, FaBrain, FaCloud, FaDatabase, FaChartLine, FaCogs } from 'react-icons/fa'
 
-const skills = [
-  {
-    category: 'Machine Learning & AI',
-    items: [
-      'Supervised Learning (XGBoost, Random Forest, SVM)',
-      'Deep Learning (CNN, LSTM, Transformers)',
-      'Unsupervised Learning (K-Means, DBSCAN, PCA)',
-      'Time Series Analysis (ARIMA, Prophet, LSTM)',
-      'Natural Language Processing (BERT, GPT, spaCy)',
-      'Computer Vision (OpenCV, YOLO, ResNet)',
-      'Ensemble Methods & Model Stacking',
-      'Hyperparameter Optimization (Bayesian, Grid Search)',
-      'Feature Engineering & Selection',
-      'Model Interpretability (SHAP, LIME)'
-    ]
-  },
-  {
-    category: 'Programming & Development',
-    items: [
-      'Python (Pandas, NumPy, Scikit-learn)',
-      'SQL (PostgreSQL, MySQL, BigQuery)',
-      'R (dplyr, ggplot2, caret)',
-      'PyTorch & TensorFlow/Keras',
-      'Apache Spark (PySpark)',
-      'Git/GitHub (CI/CD pipelines)',
-      'Docker & Kubernetes',
-      'FastAPI & Flask',
-      'Jupyter Notebooks & MLflow',
-      'Linux/Unix Command Line'
-    ]
-  },
-  {
-    category: 'Cloud & MLOps',
-    items: [
-      'AWS (SageMaker, EC2, S3, Lambda)',
-      'Google Cloud Platform (BigQuery, Vertex AI)',
-      'Microsoft Azure (ML Studio)',
-      'MLflow & Weights & Biases',
-      'Kubernetes & Docker',
-      'Apache Airflow (Workflow Orchestration)',
-      'Model Deployment & Monitoring',
-      'CI/CD for ML Pipelines',
-      'A/B Testing Frameworks',
-      'Data Version Control (DVC)'
-    ]
-  },
-  {
-    category: 'Analytics & Visualization',
-    items: [
-      'Statistical Analysis & Hypothesis Testing',
-      'Experimental Design & A/B Testing',
-      'Business Intelligence & KPI Design',
-      'Tableau & Power BI',
-      'Advanced SQL (Window Functions, CTEs)',
-      'Matplotlib, Seaborn & Plotly',
-      'Streamlit & Dash',
-      'Excel/Google Sheets (Advanced)',
-      'Data Storytelling',
-      'Stakeholder Communication'
-    ]
-  }
+type Skill = {
+  name: string
+  level: number
+  category: string
+  icon: any
+  color: string
+}
+
+const skills: Skill[] = [
+  // Programming Languages
+  { name: 'Python', level: 95, category: 'Programming', icon: FaCode, color: 'from-blue-500 to-blue-600' },
+  { name: 'R', level: 85, category: 'Programming', icon: FaCode, color: 'from-blue-500 to-blue-600' },
+  { name: 'SQL', level: 90, category: 'Programming', icon: FaDatabase, color: 'from-green-500 to-green-600' },
+  { name: 'JavaScript', level: 80, category: 'Programming', icon: FaCode, color: 'from-yellow-500 to-yellow-600' },
+  
+  // Machine Learning
+  { name: 'TensorFlow', level: 90, category: 'ML/AI', icon: FaBrain, color: 'from-orange-500 to-orange-600' },
+  { name: 'PyTorch', level: 85, category: 'ML/AI', icon: FaBrain, color: 'from-red-500 to-red-600' },
+  { name: 'Scikit-learn', level: 95, category: 'ML/AI', icon: FaBrain, color: 'from-purple-500 to-purple-600' },
+  { name: 'Pandas', level: 95, category: 'Data Analysis', icon: FaChartLine, color: 'from-indigo-500 to-indigo-600' },
+  { name: 'NumPy', level: 90, category: 'Data Analysis', icon: FaChartLine, color: 'from-blue-500 to-blue-600' },
+  
+  // Cloud & Tools
+  { name: 'AWS', level: 80, category: 'Cloud', icon: FaCloud, color: 'from-orange-500 to-orange-600' },
+  { name: 'Docker', level: 75, category: 'DevOps', icon: FaCogs, color: 'from-blue-500 to-blue-600' },
+  { name: 'Git', level: 90, category: 'Tools', icon: FaCogs, color: 'from-gray-500 to-gray-600' },
+  
+  // Data Visualization
+  { name: 'Matplotlib', level: 90, category: 'Visualization', icon: FaChartLine, color: 'from-green-500 to-green-600' },
+  { name: 'Seaborn', level: 85, category: 'Visualization', icon: FaChartLine, color: 'from-teal-500 to-teal-600' },
+  { name: 'Plotly', level: 80, category: 'Visualization', icon: FaChartLine, color: 'from-purple-500 to-purple-600' },
 ]
+
+const categories = ['Programming', 'ML/AI', 'Data Analysis', 'Cloud', 'DevOps', 'Tools', 'Visualization']
 
 const Skills = () => {
   return (
-    <section id="skills" className="section-padding bg-gradient-to-b from-blue-50 to-indigo-50 relative overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-      </div>
-
+    <section id="skills" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeInWhenVisible direction="up">
-          <h2 className="heading-2 text-gray-900 mb-4 text-center">Technical Skills</h2>
-          <div className="w-24 h-1 bg-primary mx-auto"></div>
-          <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-center">
-            A comprehensive set of technical skills focused on building scalable machine learning solutions
-            and driving data-driven decision making in agricultural and business domains.
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Technical Skills
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Technologies and tools I use to build data-driven solutions
           </p>
-        </FadeInWhenVisible>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-8"></div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {skills.map((skillGroup, index) => (
-            <FadeInWhenVisible key={index} direction="up" delay={index * 0.1}>
-              <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{skillGroup.category}</h3>
-                <ul className="space-y-3">
-                  {skillGroup.items.map((skill, i) => (
-                    <li
-                      key={i}
-                      className="flex items-center text-gray-600"
-                    >
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                      {skill}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeInWhenVisible>
-          ))}
+        {/* Skills by Category */}
+        <div className="space-y-12">
+          {categories.map((category) => {
+            const categorySkills = skills.filter(skill => skill.category === category)
+            if (categorySkills.length === 0) return null
+            
+            return (
+              <motion.div
+                key={category}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8"
+              >
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+                  {category}
+                </h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {categorySkills.map((skill, index) => {
+                    const IconComponent = skill.icon
+                    
+                    return (
+                      <motion.div
+                        key={skill.name}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        className="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                      >
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className={`w-12 h-12 bg-gradient-to-r ${skill.color} rounded-lg flex items-center justify-center`}>
+                            <IconComponent className="w-6 h-6 text-white" />
+                          </div>
+                          <div>
+                            <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                              {skill.name}
+                            </h4>
+                            <p className="text-sm text-gray-600 dark:text-gray-300">
+                              {skill.level}% Proficiency
+                            </p>
+                          </div>
+                        </div>
+                        
+                        {/* Progress Bar */}
+                        <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${skill.level}%` }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, delay: index * 0.1 }}
+                            className={`h-2 bg-gradient-to-r ${skill.color} rounded-full`}
+                          />
+                        </div>
+                      </motion.div>
+                    )
+                  })}
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>

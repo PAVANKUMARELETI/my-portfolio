@@ -72,7 +72,7 @@ This provides live proof of consistency and learning momentum.
 ## 📫 Contact
 
 - [LinkedIn](https://www.linkedin.com/in/pavaneleti)
-- [GitHub](https://github.com/pavaneleti)
-- [Email](mailto:pavan.eleti@gmail.com)
+- [GitHub](https://github.com/pavankumareleti)
+- [Email](mailto:pavaneletisj@gmail.com)
 
 Thanks for visiting!
