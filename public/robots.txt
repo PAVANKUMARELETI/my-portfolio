@@ -1,0 +1,6 @@
+# robots.txt for https://pavaneleti.me
+
+User-agent: *
+Allow: /
+
+Sitemap: https://pavaneleti.me/sitemap.xml

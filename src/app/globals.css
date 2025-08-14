@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+  --primary: #7c3aed;    /* Vibrant purple */
+  --primary-dark: #6d28d9;
+  --secondary: #ec4899;  /* Pink */
+  --accent: #06b6d4;     /* Cyan */
+  --gradient-start: #7c3aed;
+  --gradient-end: #ec4899;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  z-index: -1;
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .container-padding {
+    @apply px-4 md:px-8 lg:px-16;
+  }
+  
+  .heading-1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent;
+  }
+  
+  .heading-2 {
+    @apply text-3xl md:text-4xl font-bold bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent;
+  }
+  
+  .heading-3 {
+    @apply text-2xl md:text-3xl font-semibold bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent;
+  }
+
+  /* Hover effects */
+  .hover-effect {
+    @apply relative overflow-hidden;
+  }
+
+  .hover-effect::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 transition-opacity duration-300;
+    background-color: rgba(124, 58, 237, 0.1);
+  }
+
+  .hover-effect:hover::after {
+    @apply opacity-100;
+  }
+
+  /* Tooltip styles */
+  .tooltip {
+    @apply invisible absolute bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap
+           transform -translate-y-2 opacity-0 transition-all duration-200 pointer-events-none;
+  }
+
+  .tooltip::before {
+    content: '';
+    @apply absolute -top-1 left-1/2 -translate-x-1/2 border-4 border-transparent border-b-gray-900;
+  }
+
+  .has-tooltip:hover .tooltip {
+    @apply visible translate-y-0 opacity-100;
+  }
+
+  /* Scroll animations */
+  .scroll-reveal {
+    @apply opacity-0 transition-all duration-700;
+  }
+
+  .scroll-reveal.up {
+    transform: translateY(50px);
+  }
+
+  .scroll-reveal.down {
+    transform: translateY(-50px);
+  }
+
+  .scroll-reveal.visible {
+    @apply opacity-100;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Page transition animations */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+} 
