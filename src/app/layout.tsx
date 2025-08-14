@@ -64,7 +64,7 @@ export default function RootLayout({
             url: "https://pavaneleti.me",
             sameAs: [
               "https://github.com/PAVANKUMARELETI",
-              "https://linkedin.com/in/pavan-kumar-eleti-800a48305"
+              "https://www.linkedin.com/in/pavan-eleti-800a48305"
             ]
           })}
         </Script>

@@ -253,7 +253,7 @@ I'm passionate about solving complex problems with data and AI. Whether you're l
 
 <br/>
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Pavan_Kumar_Eleti-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/pavan-kumar-eleti)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Pavan_Eleti-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pavan-eleti-800a48305)
 [![Email](https://img.shields.io/badge/Email-askpavaneleti@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:askpavaneleti@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-PAVANKUMARELETI-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/PAVANKUMARELETI)
 [![Portfolio](https://img.shields.io/badge/Portfolio-pavaneleti.vercel.app-FF5722?style=for-the-badge&logo=vercel&logoColor=white)](https://pavaneleti.vercel.app)

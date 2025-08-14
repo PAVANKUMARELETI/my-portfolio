@@ -13,48 +13,48 @@ type Testimonial = {
 }
 
 const testimonials: Testimonial[] = [
-  {
-    name: 'Dr. Sarah Johnson',
-    title: 'Senior Data Scientist',
-    company: 'Tech Solutions Inc.',
-    content: "Pavan's work on the chili price prediction model was exceptional. His attention to detail and innovative approach to time series forecasting delivered results that exceeded our expectations.",
-    rating: 5
-  },
-  {
-    name: 'Rajesh Kumar',
-    title: 'ML Engineering Manager',
-    company: 'Analytics Pro',
-    content: "Working with Pavan on the recommendation engine project was a great experience. His technical skills combined with his ability to translate business requirements into ML solutions is impressive.",
-    rating: 5
-  },
-  {
-    name: 'Prof. Michael Chen',
-    title: 'Academic Supervisor',
-    company: 'IIIT Lucknow',
-    content: "Pavan consistently demonstrates strong analytical thinking and research capabilities. His thesis work on scalable recommendation systems shows great promise for real-world applications.",
-    rating: 5
-  },
-  {
-    name: 'Hiring Manager',
-    title: 'Mentor during Internship',
-    company: 'ITC Limited',
-    content: "The demand forecasting system Pavan built reduced our inventory costs by 15% while maintaining 95% forecast accuracy. Outstanding work!",
-    rating: 5
-  },
-  {
-    name: 'Priya Sharma',
-    title: 'Product Manager',
-    company: 'E-commerce Startup',
-    content: "Pavan's data visualization dashboard transformed how our team understands customer behavior. His ability to present complex data in an intuitive way is remarkable.",
-    rating: 5
-  },
-  {
-    name: 'Alex Rodriguez',
-    title: 'Senior Developer',
-    company: 'Data Corp',
-    content: "Collaborated with Pavan on several ML projects. His code quality, documentation, and testing practices are exemplary. A true professional.",
-    rating: 5
-  }
+  // {
+  //   name: 'Dr. Sarah Johnson',
+  //   title: 'Senior Data Scientist',
+  //   company: 'Tech Solutions Inc.',
+  //   content: "Pavan's work on the chili price prediction model was exceptional. His attention to detail and innovative approach to time series forecasting delivered results that exceeded our expectations.",
+  //   rating: 5
+  // },
+  // {
+  //   name: 'Rajesh Kumar',
+  //   title: 'ML Engineering Manager',
+  //   company: 'Analytics Pro',
+  //   content: "Working with Pavan on the recommendation engine project was a great experience. His technical skills combined with his ability to translate business requirements into ML solutions is impressive.",
+  //   rating: 5
+  // },
+  // {
+  //   name: 'Prof. Michael Chen',
+  //   title: 'Academic Supervisor',
+  //   company: 'IIIT Lucknow',
+  //   content: "Pavan consistently demonstrates strong analytical thinking and research capabilities. His thesis work on scalable recommendation systems shows great promise for real-world applications.",
+  //   rating: 5
+  // },
+  // {
+  //   name: 'Hiring Manager',
+  //   title: 'Mentor during Internship',
+  //   company: 'ITC Limited',
+  //   content: "The demand forecasting system Pavan built reduced our inventory costs by 15% while maintaining 95% forecast accuracy. Outstanding work!",
+  //   rating: 5
+  // },
+  // {
+  //   name: 'Priya Sharma',
+  //   title: 'Product Manager',
+  //   company: 'E-commerce Startup',
+  //   content: "Pavan's data visualization dashboard transformed how our team understands customer behavior. His ability to present complex data in an intuitive way is remarkable.",
+  //   rating: 5
+  // },
+  // {
+  //   name: 'Alex Rodriguez',
+  //   title: 'Senior Developer',
+  //   company: 'Data Corp',
+  //   content: "Collaborated with Pavan on several ML projects. His code quality, documentation, and testing practices are exemplary. A true professional.",
+  //   rating: 5
+  // }
 ]
 
 const Testimonials = () => {
@@ -158,7 +158,7 @@ const Testimonials = () => {
                 Start a Project
               </a>
               <a
-                href="https://linkedin.com/in/pavan-kumar-eleti"
+                href="https://www.linkedin.com/in/pavan-eleti-800a48305"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 border border-white text-white rounded-lg hover:bg-white/10 transition-colors font-medium"
